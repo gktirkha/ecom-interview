@@ -7,7 +7,6 @@ environment:
   sdk: ^3.9.0
 
 dependencies:
-  cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
@@ -15,8 +14,10 @@ dependencies:
   get: ^4.7.2
   get_storage: ^2.1.1
   json_annotation: ^4.9.0
+  # My Packages for my ease Start
   magic_extensions: ^0.0.12
   magic_image: ^0.1.0
+  # My Packages for my ease end
   shimmer: ^3.0.0
 
 dev_dependencies:
