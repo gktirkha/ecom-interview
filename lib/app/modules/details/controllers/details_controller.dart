@@ -1,3 +1,17 @@
 import 'package:get/get.dart';
 
-class DetailsController extends GetxController {}
+import '../../../data/dummy_data.dart';
+import '../../../data/product_model/product_model.dart';
+import '../../../data/review_model/review_model.dart';
+import '../../cart/controllers/cart_controller.dart';
+
+class DetailsController extends GetxController {
+  final Product product = Get.arguments;
+
+  List<Review> get reviews =>
+      ((ReviewModel.fromJson(dummyReviews).reviews ?? {})[product.id
+          .toString()]) ??
+      [];
+
+  bool get isAdded => Get.find<CartController>().isAdded(product);
+}

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ReviewModel {
 
-@JsonKey(name: 'reviews') Map<String, Review>? get review;
+@JsonKey(name: 'reviews') Map<String, List<Review>>? get reviews;
 /// Create a copy of ReviewModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ReviewModelCopyWith<ReviewModel> get copyWith => _$ReviewModelCopyWithImpl<Revi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReviewModel&&const DeepCollectionEquality().equals(other.review, review));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReviewModel&&const DeepCollectionEquality().equals(other.reviews, reviews));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(review));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(reviews));
 
 @override
 String toString() {
-  return 'ReviewModel(review: $review)';
+  return 'ReviewModel(reviews: $reviews)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ReviewModelCopyWith<$Res>  {
   factory $ReviewModelCopyWith(ReviewModel value, $Res Function(ReviewModel) _then) = _$ReviewModelCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'reviews') Map<String, Review>? review
+@JsonKey(name: 'reviews') Map<String, List<Review>>? reviews
 });
 
 
@@ -65,10 +65,10 @@ class _$ReviewModelCopyWithImpl<$Res>
 
 /// Create a copy of ReviewModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? review = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? reviews = freezed,}) {
   return _then(_self.copyWith(
-review: freezed == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
-as Map<String, Review>?,
+reviews: freezed == reviews ? _self.reviews : reviews // ignore: cast_nullable_to_non_nullable
+as Map<String, List<Review>>?,
   ));
 }
 
@@ -150,10 +150,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'reviews')  Map<String, Review>? review)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'reviews')  Map<String, List<Review>>? reviews)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReviewModel() when $default != null:
-return $default(_that.review);case _:
+return $default(_that.reviews);case _:
   return orElse();
 
 }
@@ -171,10 +171,10 @@ return $default(_that.review);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'reviews')  Map<String, Review>? review)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'reviews')  Map<String, List<Review>>? reviews)  $default,) {final _that = this;
 switch (_that) {
 case _ReviewModel():
-return $default(_that.review);}
+return $default(_that.reviews);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -188,10 +188,10 @@ return $default(_that.review);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'reviews')  Map<String, Review>? review)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'reviews')  Map<String, List<Review>>? reviews)?  $default,) {final _that = this;
 switch (_that) {
 case _ReviewModel() when $default != null:
-return $default(_that.review);case _:
+return $default(_that.reviews);case _:
   return null;
 
 }
@@ -203,14 +203,14 @@ return $default(_that.review);case _:
 @JsonSerializable()
 
 class _ReviewModel implements ReviewModel {
-  const _ReviewModel({@JsonKey(name: 'reviews') final  Map<String, Review>? review}): _review = review;
+  const _ReviewModel({@JsonKey(name: 'reviews') final  Map<String, List<Review>>? reviews}): _reviews = reviews;
   factory _ReviewModel.fromJson(Map<String, dynamic> json) => _$ReviewModelFromJson(json);
 
- final  Map<String, Review>? _review;
-@override@JsonKey(name: 'reviews') Map<String, Review>? get review {
-  final value = _review;
+ final  Map<String, List<Review>>? _reviews;
+@override@JsonKey(name: 'reviews') Map<String, List<Review>>? get reviews {
+  final value = _reviews;
   if (value == null) return null;
-  if (_review is EqualUnmodifiableMapView) return _review;
+  if (_reviews is EqualUnmodifiableMapView) return _reviews;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableMapView(value);
 }
@@ -229,16 +229,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReviewModel&&const DeepCollectionEquality().equals(other._review, _review));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReviewModel&&const DeepCollectionEquality().equals(other._reviews, _reviews));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_review));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_reviews));
 
 @override
 String toString() {
-  return 'ReviewModel(review: $review)';
+  return 'ReviewModel(reviews: $reviews)';
 }
 
 
@@ -249,7 +249,7 @@ abstract mixin class _$ReviewModelCopyWith<$Res> implements $ReviewModelCopyWith
   factory _$ReviewModelCopyWith(_ReviewModel value, $Res Function(_ReviewModel) _then) = __$ReviewModelCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'reviews') Map<String, Review>? review
+@JsonKey(name: 'reviews') Map<String, List<Review>>? reviews
 });
 
 
@@ -266,10 +266,10 @@ class __$ReviewModelCopyWithImpl<$Res>
 
 /// Create a copy of ReviewModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? review = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? reviews = freezed,}) {
   return _then(_ReviewModel(
-review: freezed == review ? _self._review : review // ignore: cast_nullable_to_non_nullable
-as Map<String, Review>?,
+reviews: freezed == reviews ? _self._reviews : reviews // ignore: cast_nullable_to_non_nullable
+as Map<String, List<Review>>?,
   ));
 }
 

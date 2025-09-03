@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:magic_image/magic_image.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -19,7 +20,9 @@ class HomeView extends GetView<HomeController> {
       itemBuilder: (context, index) {
         final item = controller.products[index];
         return InkWell(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.DETAILS, arguments: item);
+          },
           child: GridTile(
             footer: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

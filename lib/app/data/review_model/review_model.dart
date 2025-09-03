@@ -6,7 +6,7 @@ part 'review_model.g.dart';
 @freezed
 sealed class ReviewModel with _$ReviewModel {
   const factory ReviewModel({
-    @JsonKey(name: 'reviews') Map<String, Review>? review,
+    @JsonKey(name: 'reviews') Map<String, List<Review>>? reviews,
   }) = _ReviewModel;
 
   factory ReviewModel.fromJson(Map<String, dynamic> json) =>

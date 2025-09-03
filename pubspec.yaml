@@ -14,6 +14,7 @@ dependencies:
   freezed_annotation: ^3.1.0
   get: ^4.7.2
   json_annotation: ^4.9.0
+  magic_extensions: ^0.0.12
   magic_image: ^0.1.0
   shimmer: ^3.0.0
 

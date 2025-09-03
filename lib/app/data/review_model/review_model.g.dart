@@ -7,13 +7,18 @@ part of 'review_model.dart';
 // **************************************************************************
 
 _ReviewModel _$ReviewModelFromJson(Map<String, dynamic> json) => _ReviewModel(
-  review: (json['reviews'] as Map<String, dynamic>?)?.map(
-    (k, e) => MapEntry(k, Review.fromJson(e as Map<String, dynamic>)),
+  reviews: (json['reviews'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      (e as List<dynamic>)
+          .map((e) => Review.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    ),
   ),
 );
 
 Map<String, dynamic> _$ReviewModelToJson(_ReviewModel instance) =>
-    <String, dynamic>{'reviews': instance.review};
+    <String, dynamic>{'reviews': instance.reviews};
 
 _Review _$ReviewFromJson(Map<String, dynamic> json) => _Review(
   reviewId: (json['review_id'] as num?)?.toInt(),
