@@ -14,11 +14,7 @@ class DashboardView extends GetView<DashboardController> {
         leading: Text('Shop', style: Theme.of(context).textTheme.titleLarge),
         backgroundColor: Colors.white,
       ),
-      body: SafeArea(
-        child: Obx(
-          () => controller.activeWidget.paddingSymmetric(horizontal: 8),
-        ),
-      ),
+      body: SafeArea(child: Obx(() => controller.activeWidget)),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           onTap: controller.onTap,
@@ -32,7 +28,31 @@ class DashboardView extends GetView<DashboardController> {
             ),
             BottomNavigationBarItem(
               label: 'Cart',
-              icon: Icon(CupertinoIcons.cart),
+              icon: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Icon(CupertinoIcons.cart),
+                  Obx(
+                    () => controller.count > 0
+                        ? Positioned(
+                            right: -4,
+                            top: -4,
+                            child: CircleAvatar(
+                              radius: 8,
+                              child: Center(
+                                child: Text(
+                                  controller.count < 10
+                                      ? controller.count.toString()
+                                      : '9+',
+                                  style: TextStyle(fontSize: 8),
+                                ),
+                              ),
+                            ),
+                          )
+                        : SizedBox(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

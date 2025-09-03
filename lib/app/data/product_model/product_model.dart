@@ -20,6 +20,8 @@ sealed class Product with _$Product {
     @JsonKey(name: 'name') String? name,
     @JsonKey(name: 'category') String? category,
     @JsonKey(name: 'price') double? price,
+    @JsonKey(name: 'tax') double? tax,
+    @JsonKey(name: 'total') double? total,
     @JsonKey(name: 'currency') String? currency,
     @JsonKey(name: 'in_stock') bool? inStock,
     @JsonKey(name: 'rating') double? rating,

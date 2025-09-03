@@ -41,7 +41,9 @@ class DetailsView extends GetView<DetailsController> {
                         ),
                         16.height(),
                         Text(item.name ?? '', style: tt.titleLarge),
-                        Text("\$${item.price?.toStringAsFixed(2) ?? ''}"),
+                        Text(
+                          "\$${item.price?.toStringAsFixed(2) ?? ''} + \$${item.tax?.toStringAsFixed(2)} tax",
+                        ),
                         12.height(),
                         Text(item.description ?? '', style: tt.bodyLarge),
                         16.height(),
@@ -101,41 +103,46 @@ class DetailsView extends GetView<DetailsController> {
                       8.height(),
                       Text('Total Price'),
                       Text(
-                        "\$${item.price?.toStringAsFixed(2) ?? ''}",
+                        "\$${item.total?.toStringAsFixed(2) ?? ''}",
                         style: tt.titleMedium,
                       ),
                     ],
                   ),
-                  if (!controller.isAdded)
-                    Expanded(
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(4),
+                  Obx(
+                    () => (!controller.isAdded)
+                        ? Expanded(
+                            child: ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    4,
+                                  ),
+                                ),
+                                backgroundColor: Colors.blue,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: controller.onAdd,
+                              label: Text('Add To Cart'),
+                              icon: Icon(CupertinoIcons.cart),
+                            ),
+                          )
+                        : Expanded(
+                            child: ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    4,
+                                  ),
+                                ),
+                                backgroundColor: Colors.blue,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: controller.onGoToCart,
+                              label: Text('Go To Cart'),
+                              icon: Icon(CupertinoIcons.cart),
+                            ),
                           ),
-                          backgroundColor: Colors.blue,
-                          foregroundColor: Colors.white,
-                        ),
-                        onPressed: () {},
-                        label: Text('Add To Cart'),
-                        icon: Icon(CupertinoIcons.cart),
-                      ),
-                    )
-                  else
-                    Expanded(
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(4),
-                          ),
-                          backgroundColor: Colors.blue,
-                          foregroundColor: Colors.white,
-                        ),
-                        onPressed: () {},
-                        label: Text('Go To Cart'),
-                        icon: Icon(CupertinoIcons.cart),
-                      ),
-                    ),
+                  ),
                 ],
               ),
             ),

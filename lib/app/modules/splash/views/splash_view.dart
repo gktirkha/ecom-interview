@@ -9,7 +9,7 @@ class SplashView extends GetView<SplashController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const Center(
-        child: Text('SplashView is working', style: TextStyle(fontSize: 20)),
+        child: Text('Splash Screen', style: TextStyle(fontSize: 20)),
       ),
     );
   }

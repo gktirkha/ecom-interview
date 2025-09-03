@@ -280,7 +280,7 @@ as List<Product>?,
 /// @nodoc
 mixin _$Product {
 
-@JsonKey(name: 'id') int? get id;@JsonKey(name: 'name') String? get name;@JsonKey(name: 'category') String? get category;@JsonKey(name: 'price') double? get price;@JsonKey(name: 'currency') String? get currency;@JsonKey(name: 'in_stock') bool? get inStock;@JsonKey(name: 'rating') double? get rating;@JsonKey(name: 'reviews_count') int? get reviewsCount;@JsonKey(name: 'brand') String? get brand;@JsonKey(name: 'description') String? get description;@JsonKey(name: 'images') List<String>? get images;
+@JsonKey(name: 'id') int? get id;@JsonKey(name: 'name') String? get name;@JsonKey(name: 'category') String? get category;@JsonKey(name: 'price') double? get price;@JsonKey(name: 'tax') double? get tax;@JsonKey(name: 'total') double? get total;@JsonKey(name: 'currency') String? get currency;@JsonKey(name: 'in_stock') bool? get inStock;@JsonKey(name: 'rating') double? get rating;@JsonKey(name: 'reviews_count') int? get reviewsCount;@JsonKey(name: 'brand') String? get brand;@JsonKey(name: 'description') String? get description;@JsonKey(name: 'images') List<String>? get images;
 /// Create a copy of Product
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -293,16 +293,16 @@ $ProductCopyWith<Product> get copyWith => _$ProductCopyWithImpl<Product>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Product&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.category, category) || other.category == category)&&(identical(other.price, price) || other.price == price)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.inStock, inStock) || other.inStock == inStock)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.reviewsCount, reviewsCount) || other.reviewsCount == reviewsCount)&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.images, images));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Product&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.category, category) || other.category == category)&&(identical(other.price, price) || other.price == price)&&(identical(other.tax, tax) || other.tax == tax)&&(identical(other.total, total) || other.total == total)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.inStock, inStock) || other.inStock == inStock)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.reviewsCount, reviewsCount) || other.reviewsCount == reviewsCount)&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.images, images));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,category,price,currency,inStock,rating,reviewsCount,brand,description,const DeepCollectionEquality().hash(images));
+int get hashCode => Object.hash(runtimeType,id,name,category,price,tax,total,currency,inStock,rating,reviewsCount,brand,description,const DeepCollectionEquality().hash(images));
 
 @override
 String toString() {
-  return 'Product(id: $id, name: $name, category: $category, price: $price, currency: $currency, inStock: $inStock, rating: $rating, reviewsCount: $reviewsCount, brand: $brand, description: $description, images: $images)';
+  return 'Product(id: $id, name: $name, category: $category, price: $price, tax: $tax, total: $total, currency: $currency, inStock: $inStock, rating: $rating, reviewsCount: $reviewsCount, brand: $brand, description: $description, images: $images)';
 }
 
 
@@ -313,7 +313,7 @@ abstract mixin class $ProductCopyWith<$Res>  {
   factory $ProductCopyWith(Product value, $Res Function(Product) _then) = _$ProductCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'id') int? id,@JsonKey(name: 'name') String? name,@JsonKey(name: 'category') String? category,@JsonKey(name: 'price') double? price,@JsonKey(name: 'currency') String? currency,@JsonKey(name: 'in_stock') bool? inStock,@JsonKey(name: 'rating') double? rating,@JsonKey(name: 'reviews_count') int? reviewsCount,@JsonKey(name: 'brand') String? brand,@JsonKey(name: 'description') String? description,@JsonKey(name: 'images') List<String>? images
+@JsonKey(name: 'id') int? id,@JsonKey(name: 'name') String? name,@JsonKey(name: 'category') String? category,@JsonKey(name: 'price') double? price,@JsonKey(name: 'tax') double? tax,@JsonKey(name: 'total') double? total,@JsonKey(name: 'currency') String? currency,@JsonKey(name: 'in_stock') bool? inStock,@JsonKey(name: 'rating') double? rating,@JsonKey(name: 'reviews_count') int? reviewsCount,@JsonKey(name: 'brand') String? brand,@JsonKey(name: 'description') String? description,@JsonKey(name: 'images') List<String>? images
 });
 
 
@@ -330,12 +330,14 @@ class _$ProductCopyWithImpl<$Res>
 
 /// Create a copy of Product
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? category = freezed,Object? price = freezed,Object? currency = freezed,Object? inStock = freezed,Object? rating = freezed,Object? reviewsCount = freezed,Object? brand = freezed,Object? description = freezed,Object? images = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? category = freezed,Object? price = freezed,Object? tax = freezed,Object? total = freezed,Object? currency = freezed,Object? inStock = freezed,Object? rating = freezed,Object? reviewsCount = freezed,Object? brand = freezed,Object? description = freezed,Object? images = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double?,tax: freezed == tax ? _self.tax : tax // ignore: cast_nullable_to_non_nullable
+as double?,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
 as double?,currency: freezed == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as String?,inStock: freezed == inStock ? _self.inStock : inStock // ignore: cast_nullable_to_non_nullable
 as bool?,rating: freezed == rating ? _self.rating : rating // ignore: cast_nullable_to_non_nullable
@@ -425,10 +427,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int? id, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'category')  String? category, @JsonKey(name: 'price')  double? price, @JsonKey(name: 'currency')  String? currency, @JsonKey(name: 'in_stock')  bool? inStock, @JsonKey(name: 'rating')  double? rating, @JsonKey(name: 'reviews_count')  int? reviewsCount, @JsonKey(name: 'brand')  String? brand, @JsonKey(name: 'description')  String? description, @JsonKey(name: 'images')  List<String>? images)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int? id, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'category')  String? category, @JsonKey(name: 'price')  double? price, @JsonKey(name: 'tax')  double? tax, @JsonKey(name: 'total')  double? total, @JsonKey(name: 'currency')  String? currency, @JsonKey(name: 'in_stock')  bool? inStock, @JsonKey(name: 'rating')  double? rating, @JsonKey(name: 'reviews_count')  int? reviewsCount, @JsonKey(name: 'brand')  String? brand, @JsonKey(name: 'description')  String? description, @JsonKey(name: 'images')  List<String>? images)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Product() when $default != null:
-return $default(_that.id,_that.name,_that.category,_that.price,_that.currency,_that.inStock,_that.rating,_that.reviewsCount,_that.brand,_that.description,_that.images);case _:
+return $default(_that.id,_that.name,_that.category,_that.price,_that.tax,_that.total,_that.currency,_that.inStock,_that.rating,_that.reviewsCount,_that.brand,_that.description,_that.images);case _:
   return orElse();
 
 }
@@ -446,10 +448,10 @@ return $default(_that.id,_that.name,_that.category,_that.price,_that.currency,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int? id, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'category')  String? category, @JsonKey(name: 'price')  double? price, @JsonKey(name: 'currency')  String? currency, @JsonKey(name: 'in_stock')  bool? inStock, @JsonKey(name: 'rating')  double? rating, @JsonKey(name: 'reviews_count')  int? reviewsCount, @JsonKey(name: 'brand')  String? brand, @JsonKey(name: 'description')  String? description, @JsonKey(name: 'images')  List<String>? images)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int? id, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'category')  String? category, @JsonKey(name: 'price')  double? price, @JsonKey(name: 'tax')  double? tax, @JsonKey(name: 'total')  double? total, @JsonKey(name: 'currency')  String? currency, @JsonKey(name: 'in_stock')  bool? inStock, @JsonKey(name: 'rating')  double? rating, @JsonKey(name: 'reviews_count')  int? reviewsCount, @JsonKey(name: 'brand')  String? brand, @JsonKey(name: 'description')  String? description, @JsonKey(name: 'images')  List<String>? images)  $default,) {final _that = this;
 switch (_that) {
 case _Product():
-return $default(_that.id,_that.name,_that.category,_that.price,_that.currency,_that.inStock,_that.rating,_that.reviewsCount,_that.brand,_that.description,_that.images);}
+return $default(_that.id,_that.name,_that.category,_that.price,_that.tax,_that.total,_that.currency,_that.inStock,_that.rating,_that.reviewsCount,_that.brand,_that.description,_that.images);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -463,10 +465,10 @@ return $default(_that.id,_that.name,_that.category,_that.price,_that.currency,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id')  int? id, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'category')  String? category, @JsonKey(name: 'price')  double? price, @JsonKey(name: 'currency')  String? currency, @JsonKey(name: 'in_stock')  bool? inStock, @JsonKey(name: 'rating')  double? rating, @JsonKey(name: 'reviews_count')  int? reviewsCount, @JsonKey(name: 'brand')  String? brand, @JsonKey(name: 'description')  String? description, @JsonKey(name: 'images')  List<String>? images)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id')  int? id, @JsonKey(name: 'name')  String? name, @JsonKey(name: 'category')  String? category, @JsonKey(name: 'price')  double? price, @JsonKey(name: 'tax')  double? tax, @JsonKey(name: 'total')  double? total, @JsonKey(name: 'currency')  String? currency, @JsonKey(name: 'in_stock')  bool? inStock, @JsonKey(name: 'rating')  double? rating, @JsonKey(name: 'reviews_count')  int? reviewsCount, @JsonKey(name: 'brand')  String? brand, @JsonKey(name: 'description')  String? description, @JsonKey(name: 'images')  List<String>? images)?  $default,) {final _that = this;
 switch (_that) {
 case _Product() when $default != null:
-return $default(_that.id,_that.name,_that.category,_that.price,_that.currency,_that.inStock,_that.rating,_that.reviewsCount,_that.brand,_that.description,_that.images);case _:
+return $default(_that.id,_that.name,_that.category,_that.price,_that.tax,_that.total,_that.currency,_that.inStock,_that.rating,_that.reviewsCount,_that.brand,_that.description,_that.images);case _:
   return null;
 
 }
@@ -478,13 +480,15 @@ return $default(_that.id,_that.name,_that.category,_that.price,_that.currency,_t
 @JsonSerializable()
 
 class _Product implements Product {
-  const _Product({@JsonKey(name: 'id') this.id, @JsonKey(name: 'name') this.name, @JsonKey(name: 'category') this.category, @JsonKey(name: 'price') this.price, @JsonKey(name: 'currency') this.currency, @JsonKey(name: 'in_stock') this.inStock, @JsonKey(name: 'rating') this.rating, @JsonKey(name: 'reviews_count') this.reviewsCount, @JsonKey(name: 'brand') this.brand, @JsonKey(name: 'description') this.description, @JsonKey(name: 'images') final  List<String>? images}): _images = images;
+  const _Product({@JsonKey(name: 'id') this.id, @JsonKey(name: 'name') this.name, @JsonKey(name: 'category') this.category, @JsonKey(name: 'price') this.price, @JsonKey(name: 'tax') this.tax, @JsonKey(name: 'total') this.total, @JsonKey(name: 'currency') this.currency, @JsonKey(name: 'in_stock') this.inStock, @JsonKey(name: 'rating') this.rating, @JsonKey(name: 'reviews_count') this.reviewsCount, @JsonKey(name: 'brand') this.brand, @JsonKey(name: 'description') this.description, @JsonKey(name: 'images') final  List<String>? images}): _images = images;
   factory _Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
 
 @override@JsonKey(name: 'id') final  int? id;
 @override@JsonKey(name: 'name') final  String? name;
 @override@JsonKey(name: 'category') final  String? category;
 @override@JsonKey(name: 'price') final  double? price;
+@override@JsonKey(name: 'tax') final  double? tax;
+@override@JsonKey(name: 'total') final  double? total;
 @override@JsonKey(name: 'currency') final  String? currency;
 @override@JsonKey(name: 'in_stock') final  bool? inStock;
 @override@JsonKey(name: 'rating') final  double? rating;
@@ -514,16 +518,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Product&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.category, category) || other.category == category)&&(identical(other.price, price) || other.price == price)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.inStock, inStock) || other.inStock == inStock)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.reviewsCount, reviewsCount) || other.reviewsCount == reviewsCount)&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._images, _images));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Product&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.category, category) || other.category == category)&&(identical(other.price, price) || other.price == price)&&(identical(other.tax, tax) || other.tax == tax)&&(identical(other.total, total) || other.total == total)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.inStock, inStock) || other.inStock == inStock)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.reviewsCount, reviewsCount) || other.reviewsCount == reviewsCount)&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._images, _images));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,category,price,currency,inStock,rating,reviewsCount,brand,description,const DeepCollectionEquality().hash(_images));
+int get hashCode => Object.hash(runtimeType,id,name,category,price,tax,total,currency,inStock,rating,reviewsCount,brand,description,const DeepCollectionEquality().hash(_images));
 
 @override
 String toString() {
-  return 'Product(id: $id, name: $name, category: $category, price: $price, currency: $currency, inStock: $inStock, rating: $rating, reviewsCount: $reviewsCount, brand: $brand, description: $description, images: $images)';
+  return 'Product(id: $id, name: $name, category: $category, price: $price, tax: $tax, total: $total, currency: $currency, inStock: $inStock, rating: $rating, reviewsCount: $reviewsCount, brand: $brand, description: $description, images: $images)';
 }
 
 
@@ -534,7 +538,7 @@ abstract mixin class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   factory _$ProductCopyWith(_Product value, $Res Function(_Product) _then) = __$ProductCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'id') int? id,@JsonKey(name: 'name') String? name,@JsonKey(name: 'category') String? category,@JsonKey(name: 'price') double? price,@JsonKey(name: 'currency') String? currency,@JsonKey(name: 'in_stock') bool? inStock,@JsonKey(name: 'rating') double? rating,@JsonKey(name: 'reviews_count') int? reviewsCount,@JsonKey(name: 'brand') String? brand,@JsonKey(name: 'description') String? description,@JsonKey(name: 'images') List<String>? images
+@JsonKey(name: 'id') int? id,@JsonKey(name: 'name') String? name,@JsonKey(name: 'category') String? category,@JsonKey(name: 'price') double? price,@JsonKey(name: 'tax') double? tax,@JsonKey(name: 'total') double? total,@JsonKey(name: 'currency') String? currency,@JsonKey(name: 'in_stock') bool? inStock,@JsonKey(name: 'rating') double? rating,@JsonKey(name: 'reviews_count') int? reviewsCount,@JsonKey(name: 'brand') String? brand,@JsonKey(name: 'description') String? description,@JsonKey(name: 'images') List<String>? images
 });
 
 
@@ -551,12 +555,14 @@ class __$ProductCopyWithImpl<$Res>
 
 /// Create a copy of Product
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? category = freezed,Object? price = freezed,Object? currency = freezed,Object? inStock = freezed,Object? rating = freezed,Object? reviewsCount = freezed,Object? brand = freezed,Object? description = freezed,Object? images = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? category = freezed,Object? price = freezed,Object? tax = freezed,Object? total = freezed,Object? currency = freezed,Object? inStock = freezed,Object? rating = freezed,Object? reviewsCount = freezed,Object? brand = freezed,Object? description = freezed,Object? images = freezed,}) {
   return _then(_Product(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double?,tax: freezed == tax ? _self.tax : tax // ignore: cast_nullable_to_non_nullable
+as double?,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
 as double?,currency: freezed == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as String?,inStock: freezed == inStock ? _self.inStock : inStock // ignore: cast_nullable_to_non_nullable
 as bool?,rating: freezed == rating ? _self.rating : rating // ignore: cast_nullable_to_non_nullable

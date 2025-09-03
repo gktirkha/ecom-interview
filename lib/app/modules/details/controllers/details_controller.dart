@@ -4,6 +4,7 @@ import '../../../data/dummy_data.dart';
 import '../../../data/product_model/product_model.dart';
 import '../../../data/review_model/review_model.dart';
 import '../../cart/controllers/cart_controller.dart';
+import '../../dashboard/controllers/dashboard_controller.dart';
 
 class DetailsController extends GetxController {
   final Product product = Get.arguments;
@@ -14,4 +15,13 @@ class DetailsController extends GetxController {
       [];
 
   bool get isAdded => Get.find<CartController>().isAdded(product);
+
+  void onAdd() {
+    Get.find<CartController>().onAdd(product);
+  }
+
+  void onGoToCart() {
+    Get.find<DashboardController>().activeIndex.value = 1;
+    Get.back();
+  }
 }

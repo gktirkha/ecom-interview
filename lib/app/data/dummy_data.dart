@@ -13,6 +13,8 @@ final dummyProducts = {
       'description':
           'Noise-cancelling over-ear wireless headphones with 20 hours of battery life.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+1'],
+      'tax': 6.0,
+      'total': 65.99,
     },
     {
       'id': 2,
@@ -27,6 +29,8 @@ final dummyProducts = {
       'description':
           'Lightweight and breathable running shoes designed for comfort and performance.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+2'],
+      'tax': 8.0,
+      'total': 87.99,
     },
     {
       'id': 3,
@@ -41,6 +45,8 @@ final dummyProducts = {
       'description':
           '4K Ultra HD Smart LED TV with built-in streaming apps and voice control.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+3'],
+      'tax': 50.0,
+      'total': 549.99,
     },
     {
       'id': 4,
@@ -55,6 +61,8 @@ final dummyProducts = {
       'description':
           'Durable ceramic mug with heat-resistant handle, perfect for hot beverages.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+4'],
+      'tax': 1.25,
+      'total': 13.74,
     },
     {
       'id': 5,
@@ -69,6 +77,8 @@ final dummyProducts = {
       'description':
           'High-performance gaming laptop with RTX graphics card and 16GB RAM.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+5'],
+      'tax': 110.0,
+      'total': 1209.99,
     },
     {
       'id': 6,
@@ -83,6 +93,8 @@ final dummyProducts = {
       'description':
           'Premium leather handbag with multiple compartments and stylish design.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+6'],
+      'tax': 13.0,
+      'total': 142.99,
     },
     {
       'id': 7,
@@ -97,6 +109,8 @@ final dummyProducts = {
       'description':
           'Eco-friendly reusable water bottle with double-wall insulation.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+7'],
+      'tax': 1.9,
+      'total': 20.89,
     },
     {
       'id': 8,
@@ -111,6 +125,8 @@ final dummyProducts = {
       'description':
           'Durable wooden desk with spacious surface and storage drawers.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+8'],
+      'tax': 25.0,
+      'total': 274.99,
     },
     {
       'id': 9,
@@ -125,6 +141,8 @@ final dummyProducts = {
       'description':
           'Latest smartphone with 128GB storage, AMOLED display, and fast charging.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+9'],
+      'tax': 70.0,
+      'total': 769.99,
     },
     {
       'id': 10,
@@ -139,6 +157,8 @@ final dummyProducts = {
       'description':
           'Soft and breathable cotton bed sheet set with pillow covers.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+10'],
+      'tax': 4.6,
+      'total': 50.59,
     },
     {
       'id': 11,
@@ -153,6 +173,8 @@ final dummyProducts = {
       'description':
           'Stainless steel electric kettle with auto shut-off and boil-dry protection.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+11'],
+      'tax': 3.0,
+      'total': 32.99,
     },
     {
       'id': 12,
@@ -167,6 +189,8 @@ final dummyProducts = {
       'description':
           'Water-resistant smartwatch with heart rate monitor and GPS tracking.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+12'],
+      'tax': 15.0,
+      'total': 164.99,
     },
     {
       'id': 13,
@@ -181,6 +205,8 @@ final dummyProducts = {
       'description':
           'Classic blue denim jacket with button closure and two chest pockets.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+13'],
+      'tax': 9.0,
+      'total': 98.99,
     },
     {
       'id': 14,
@@ -195,6 +221,8 @@ final dummyProducts = {
       'description':
           'Compact wireless speaker with deep bass and 10-hour battery life.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+14'],
+      'tax': 4.0,
+      'total': 43.99,
     },
     {
       'id': 15,
@@ -208,6 +236,8 @@ final dummyProducts = {
       'brand': 'CookMate',
       'description': 'Durable non-stick frying pan with heat-resistant handle.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+15'],
+      'tax': 2.6,
+      'total': 28.59,
     },
     {
       'id': 16,
@@ -222,6 +252,8 @@ final dummyProducts = {
       'description':
           'Adjustable ergonomic office chair with lumbar support and breathable mesh.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+16'],
+      'tax': 20.0,
+      'total': 219.99,
     },
     {
       'id': 17,
@@ -236,6 +268,8 @@ final dummyProducts = {
       'description':
           'Solid body electric guitar with maple neck and humbucker pickups.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+17'],
+      'tax': 35.0,
+      'total': 384.99,
     },
     {
       'id': 18,
@@ -250,6 +284,8 @@ final dummyProducts = {
       'description':
           'Eco-friendly non-slip yoga mat with extra cushioning for comfort.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+18'],
+      'tax': 2.3,
+      'total': 25.29,
     },
     {
       'id': 19,
@@ -264,6 +300,8 @@ final dummyProducts = {
       'description':
           'Modern table lamp with adjustable brightness and warm LED light.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+19'],
+      'tax': 3.5,
+      'total': 38.49,
     },
     {
       'id': 20,
@@ -278,6 +316,8 @@ final dummyProducts = {
       'description':
           'Slim wireless keyboard and mouse set with long battery life.',
       'images': ['https://placehold.co/400x400.jpg?text=Product+20'],
+      'tax': 5.0,
+      'total': 54.99,
     },
   ],
 };

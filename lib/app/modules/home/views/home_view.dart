@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:magic_extensions/magic_extensions.dart';
 import 'package:magic_image/magic_image.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -24,6 +25,7 @@ class HomeView extends GetView<HomeController> {
             Get.toNamed(Routes.DETAILS, arguments: item);
           },
           child: GridTile(
+            key: ValueKey(item),
             footer: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,7 +33,26 @@ class HomeView extends GetView<HomeController> {
                   item.name ?? '',
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                Text("\$${item.price?.toStringAsFixed(2) ?? ''}"),
+                Row(
+                  children: [
+                    Text(
+                      "\$${item.total?.toStringAsFixed(2) ?? ''}",
+                    ).expanded(),
+                    Obx(
+                      () => controller.isAdded(item)
+                          ? IconButton(
+                              onPressed: controller.onGoToCart,
+                              icon: Icon(Icons.arrow_forward_ios),
+                            )
+                          : IconButton(
+                              onPressed: () {
+                                controller.onAdd(item);
+                              },
+                              icon: Icon(Icons.add),
+                            ),
+                    ),
+                  ],
+                ),
               ],
             ).paddingSymmetric(horizontal: 12, vertical: 8),
             child: Container(
