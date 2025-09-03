@@ -1,0 +1,17 @@
+{
+  "1": [
+    {
+      "review_id": 101,
+      "user": "JohnD",
+      "rating": 5,
+      "comment": "Amazing sound quality, very comfortable to wear."
+    },
+    {
+      "review_id": 102,
+      "user": "LaraP",
+      "rating": 4,
+      "comment": "Battery lasts long, but ear cushions could be softer.",
+      "date": "2025-01-12"
+    }
+  ]
+}
