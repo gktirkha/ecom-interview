@@ -12,7 +12,7 @@ final dummyProducts = {
       'brand': 'SoundMax',
       'description':
           'Noise-cancelling over-ear wireless headphones with 20 hours of battery life.',
-      'images': ['https://placehold.co/400x400?text=Product+1'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+1'],
     },
     {
       'id': 2,
@@ -26,7 +26,7 @@ final dummyProducts = {
       'brand': 'RunFast',
       'description':
           'Lightweight and breathable running shoes designed for comfort and performance.',
-      'images': ['https://placehold.co/400x400?text=Product+2'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+2'],
     },
     {
       'id': 3,
@@ -40,7 +40,7 @@ final dummyProducts = {
       'brand': 'VisionX',
       'description':
           '4K Ultra HD Smart LED TV with built-in streaming apps and voice control.',
-      'images': ['https://placehold.co/400x400?text=Product+3'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+3'],
     },
     {
       'id': 4,
@@ -54,7 +54,7 @@ final dummyProducts = {
       'brand': 'HomeBrew',
       'description':
           'Durable ceramic mug with heat-resistant handle, perfect for hot beverages.',
-      'images': ['https://placehold.co/400x400?text=Product+4'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+4'],
     },
     {
       'id': 5,
@@ -68,7 +68,7 @@ final dummyProducts = {
       'brand': 'GameX',
       'description':
           'High-performance gaming laptop with RTX graphics card and 16GB RAM.',
-      'images': ['https://placehold.co/400x400?text=Product+5'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+5'],
     },
     {
       'id': 6,
@@ -82,7 +82,7 @@ final dummyProducts = {
       'brand': 'StyleCo',
       'description':
           'Premium leather handbag with multiple compartments and stylish design.',
-      'images': ['https://placehold.co/400x400?text=Product+6'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+6'],
     },
     {
       'id': 7,
@@ -96,7 +96,7 @@ final dummyProducts = {
       'brand': 'HydroMax',
       'description':
           'Eco-friendly reusable water bottle with double-wall insulation.',
-      'images': ['https://placehold.co/400x400?text=Product+7'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+7'],
     },
     {
       'id': 8,
@@ -110,7 +110,7 @@ final dummyProducts = {
       'brand': 'FurniCraft',
       'description':
           'Durable wooden desk with spacious surface and storage drawers.',
-      'images': ['https://placehold.co/400x400?text=Product+8'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+8'],
     },
     {
       'id': 9,
@@ -124,7 +124,7 @@ final dummyProducts = {
       'brand': 'TechOne',
       'description':
           'Latest smartphone with 128GB storage, AMOLED display, and fast charging.',
-      'images': ['https://placehold.co/400x400?text=Product+9'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+9'],
     },
     {
       'id': 10,
@@ -138,7 +138,7 @@ final dummyProducts = {
       'brand': 'ComfyHome',
       'description':
           'Soft and breathable cotton bed sheet set with pillow covers.',
-      'images': ['https://placehold.co/400x400?text=Product+10'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+10'],
     },
     {
       'id': 11,
@@ -152,7 +152,7 @@ final dummyProducts = {
       'brand': 'QuickBoil',
       'description':
           'Stainless steel electric kettle with auto shut-off and boil-dry protection.',
-      'images': ['https://placehold.co/400x400?text=Product+11'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+11'],
     },
     {
       'id': 12,
@@ -166,7 +166,7 @@ final dummyProducts = {
       'brand': 'FitTrack',
       'description':
           'Water-resistant smartwatch with heart rate monitor and GPS tracking.',
-      'images': ['https://placehold.co/400x400?text=Product+12'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+12'],
     },
     {
       'id': 13,
@@ -180,7 +180,7 @@ final dummyProducts = {
       'brand': 'UrbanStyle',
       'description':
           'Classic blue denim jacket with button closure and two chest pockets.',
-      'images': ['https://placehold.co/400x400?text=Product+13'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+13'],
     },
     {
       'id': 14,
@@ -194,7 +194,7 @@ final dummyProducts = {
       'brand': 'BeatBox',
       'description':
           'Compact wireless speaker with deep bass and 10-hour battery life.',
-      'images': ['https://placehold.co/400x400?text=Product+14'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+14'],
     },
     {
       'id': 15,
@@ -207,7 +207,7 @@ final dummyProducts = {
       'reviews_count': 89,
       'brand': 'CookMate',
       'description': 'Durable non-stick frying pan with heat-resistant handle.',
-      'images': ['https://placehold.co/400x400?text=Product+15'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+15'],
     },
     {
       'id': 16,
@@ -221,7 +221,7 @@ final dummyProducts = {
       'brand': 'ErgoSit',
       'description':
           'Adjustable ergonomic office chair with lumbar support and breathable mesh.',
-      'images': ['https://placehold.co/400x400?text=Product+16'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+16'],
     },
     {
       'id': 17,
@@ -235,7 +235,7 @@ final dummyProducts = {
       'brand': 'RockStar',
       'description':
           'Solid body electric guitar with maple neck and humbucker pickups.',
-      'images': ['https://placehold.co/400x400?text=Product+17'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+17'],
     },
     {
       'id': 18,
@@ -249,7 +249,7 @@ final dummyProducts = {
       'brand': 'ZenFlex',
       'description':
           'Eco-friendly non-slip yoga mat with extra cushioning for comfort.',
-      'images': ['https://placehold.co/400x400?text=Product+18'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+18'],
     },
     {
       'id': 19,
@@ -263,7 +263,7 @@ final dummyProducts = {
       'brand': 'BrightHome',
       'description':
           'Modern table lamp with adjustable brightness and warm LED light.',
-      'images': ['https://placehold.co/400x400?text=Product+19'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+19'],
     },
     {
       'id': 20,
@@ -277,7 +277,7 @@ final dummyProducts = {
       'brand': 'KeyTech',
       'description':
           'Slim wireless keyboard and mouse set with long battery life.',
-      'images': ['https://placehold.co/400x400?text=Product+20'],
+      'images': ['https://placehold.co/400x400.jpg?text=Product+20'],
     },
   ],
 };

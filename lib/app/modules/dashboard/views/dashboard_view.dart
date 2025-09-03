@@ -11,7 +11,7 @@ class DashboardView extends GetView<DashboardController> {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: CupertinoNavigationBar(
-        middle: Text('Shop'),
+        leading: Text('Shop', style: Theme.of(context).textTheme.titleLarge),
         backgroundColor: Colors.white,
       ),
       body: SafeArea(
