@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:magic_extensions/magic_extensions.dart';
 import 'package:magic_image/magic_image.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../routes/app_pages.dart';
+import '../../cart/controllers/cart_controller.dart';
+import '../../dashboard/controllers/dashboard_controller.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -31,7 +34,31 @@ class HomeView extends GetView<HomeController> {
                   item.name ?? '',
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                Text("\$${item.price?.toStringAsFixed(2) ?? ''}"),
+                Row(
+                  children: [
+                    Text(
+                      "\$${item.total?.toStringAsFixed(2) ?? ''}",
+                    ).expanded(),
+                    Obx(
+                      () => Get.find<CartController>().isAdded(item)
+                          ? IconButton(
+                              onPressed: () {
+                                Get.find<DashboardController>()
+                                        .activeIndex
+                                        .value =
+                                    1;
+                              },
+                              icon: Icon(Icons.arrow_forward_ios),
+                            )
+                          : IconButton(
+                              onPressed: () {
+                                Get.find<CartController>().onAdd(item);
+                              },
+                              icon: Icon(Icons.add),
+                            ),
+                    ),
+                  ],
+                ),
               ],
             ).paddingSymmetric(horizontal: 12, vertical: 8),
             child: Container(

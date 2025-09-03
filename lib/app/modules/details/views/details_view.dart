@@ -43,7 +43,9 @@ class DetailsView extends GetView<DetailsController> {
                         ),
                         16.height(),
                         Text(item.name ?? '', style: tt.titleLarge),
-                        Text("\$${item.price?.toStringAsFixed(2) ?? ''}"),
+                        Text(
+                          "\$${item.price?.toStringAsFixed(2) ?? ''} + \$${item.tax?.toStringAsFixed(2)} tax",
+                        ),
                         12.height(),
                         Text(item.description ?? '', style: tt.bodyLarge),
                         16.height(),
@@ -103,7 +105,7 @@ class DetailsView extends GetView<DetailsController> {
                       8.height(),
                       Text('Total Price'),
                       Text(
-                        "\$${item.price?.toStringAsFixed(2) ?? ''}",
+                        "\$${item.total?.toStringAsFixed(2) ?? ''}",
                         style: tt.titleMedium,
                       ),
                     ],

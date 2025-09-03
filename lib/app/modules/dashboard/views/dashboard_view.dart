@@ -14,11 +14,7 @@ class DashboardView extends GetView<DashboardController> {
         leading: Text('Shop', style: Theme.of(context).textTheme.titleLarge),
         backgroundColor: Colors.white,
       ),
-      body: SafeArea(
-        child: Obx(
-          () => controller.activeWidget.paddingSymmetric(horizontal: 8),
-        ),
-      ),
+      body: SafeArea(child: Obx(() => controller.activeWidget)),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           onTap: controller.onTap,

@@ -34,4 +34,10 @@ class CartController extends GetxController {
   bool isAdded(Product product) {
     return cart.containsKey(product.id);
   }
+
+  num? get total => cart.entries.fold(
+    0,
+    (previousValue, element) =>
+        (previousValue ?? 0) + (element.value.product.total ?? 0),
+  );
 }
