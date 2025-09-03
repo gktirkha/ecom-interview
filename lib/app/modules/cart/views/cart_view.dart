@@ -19,65 +19,83 @@ class CartView extends GetView<CartController> {
           : Column(
               children: [
                 Expanded(
-                  child: CustomScrollView(
-                    slivers: [
-                      SliverList.separated(
-                        itemCount: cart.length,
-                        itemBuilder: (context, index) {
-                          final item = cart[index].value.product;
-                          return ExpansionTile(
-                            tilePadding: EdgeInsets.symmetric(horizontal: 8),
-                            childrenPadding: EdgeInsets.symmetric(
-                              horizontal: 8,
-                            ),
-                            title: Text(item.name ?? ''),
-                            initiallyExpanded: true,
-                            children: [
-                              Row(
-                                spacing: 8,
-                                children: [
-                                  Expanded(child: Text('Item Price')),
-                                  Text('\$${item.price}'),
-                                ],
-                              ),
-                              Row(
-                                spacing: 8,
-                                children: [
-                                  Expanded(child: Text('Item Tax')),
-                                  Text('\$${item.tax}'),
-                                ],
-                              ),
-                              Row(
-                                spacing: 8,
-                                children: [
-                                  Expanded(child: Text('Item Total')),
-                                  Text('\$${item.total}'),
-                                ],
-                              ),
-                              SizedBox(
-                                width: double.maxFinite,
-                                child: ElevatedButton.icon(
-                                  style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadiusGeometry.circular(4),
-                                    ),
-                                    backgroundColor: Colors.red,
-                                    foregroundColor: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: CustomScrollView(
+                      slivers: [
+                        16.height().sliverBox,
+                        SliverList.separated(
+                          itemCount: cart.length,
+                          itemBuilder: (context, index) {
+                            final item = cart[index].value.product;
+                            return Theme(
+                              data: ThemeData(dividerColor: Colors.transparent),
+                              child: Container(
+                                padding: EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: ExpansionTile(
+                                  tilePadding: EdgeInsets.symmetric(
+                                    horizontal: 8,
                                   ),
-                                  onPressed: () {
-                                    controller.onSub(item);
-                                  },
-                                  label: Text('Remove'),
-                                  icon: Icon(CupertinoIcons.delete),
+                                  childrenPadding: EdgeInsets.symmetric(
+                                    horizontal: 8,
+                                  ),
+                                  title: Text(item.name ?? ''),
+                                  initiallyExpanded: true,
+                                  children: [
+                                    Row(
+                                      spacing: 8,
+                                      children: [
+                                        Expanded(child: Text('Item Price')),
+                                        Text('\$${item.price}'),
+                                      ],
+                                    ),
+                                    Row(
+                                      spacing: 8,
+                                      children: [
+                                        Expanded(child: Text('Item Tax')),
+                                        Text('\$${item.tax}'),
+                                      ],
+                                    ),
+                                    Row(
+                                      spacing: 8,
+                                      children: [
+                                        Expanded(child: Text('Item Total')),
+                                        Text('\$${item.total}'),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: double.maxFinite,
+                                      child: ElevatedButton.icon(
+                                        style: ElevatedButton.styleFrom(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadiusGeometry.circular(
+                                                  4,
+                                                ),
+                                          ),
+                                          backgroundColor: Colors.red,
+                                          foregroundColor: Colors.white,
+                                        ),
+                                        onPressed: () {
+                                          controller.onSub(item);
+                                        },
+                                        label: Text('Remove'),
+                                        icon: Icon(CupertinoIcons.delete),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          );
-                        },
-                        separatorBuilder: (context, index) => 8.height(),
-                      ),
-                    ],
+                            );
+                          },
+                          separatorBuilder: (context, index) => 8.height(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(

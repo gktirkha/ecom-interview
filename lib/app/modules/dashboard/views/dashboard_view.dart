@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../cart/controllers/cart_controller.dart';
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
   const DashboardView({super.key});
+  int get count => Get.find<CartController>().cart.length;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,29 @@ class DashboardView extends GetView<DashboardController> {
             ),
             BottomNavigationBarItem(
               label: 'Cart',
-              icon: Icon(CupertinoIcons.cart),
+              icon: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Icon(CupertinoIcons.cart),
+                  Obx(
+                    () => count > 0
+                        ? Positioned(
+                            right: -4,
+                            top: -4,
+                            child: CircleAvatar(
+                              radius: 8,
+                              child: Center(
+                                child: Text(
+                                  count < 10 ? count.toString() : '9+',
+                                  style: TextStyle(fontSize: 8),
+                                ),
+                              ),
+                            ),
+                          )
+                        : SizedBox(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

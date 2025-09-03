@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../data/product_model/product_model.dart';
 import '../view_model/cart_state_model.dart';
@@ -40,4 +41,32 @@ class CartController extends GetxController {
     (previousValue, element) =>
         (previousValue ?? 0) + (element.value.product.total ?? 0),
   );
+
+  // due to time constraints adding local storage here, i would had made a separate helper class for this
+  final storage = GetStorage();
+  final _cartKey = 'cart';
+
+  @override
+  void onInit() {
+    initialize();
+    super.onInit();
+  }
+
+  initialize() {
+    final data = storage.read<List<dynamic>>(_cartKey);
+    if (data != null) {
+      final dataE = <MapEntry<int, CartStateModel>>[];
+      for (var element in data) {
+        final CartStateModel model = CartStateModel.fromJson(element);
+        if (model.product.id != null) {
+          dataE.add(MapEntry(model.product.id!, model));
+        }
+      }
+      cart.addAll(Map.fromEntries(dataE));
+    }
+    cart.listen((data) {
+      final storageData = [...data.values.map((e) => e.toJson())];
+      storage.write(_cartKey, storageData);
+    });
+  }
 }
