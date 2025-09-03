@@ -18,42 +18,45 @@ class HomeView extends GetView<HomeController> {
       ),
       itemBuilder: (context, index) {
         final item = controller.products[index];
-        return GridTile(
-          footer: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                item.name ?? '',
-                style: Theme.of(context).textTheme.titleSmall,
+        return InkWell(
+          onTap: () {},
+          child: GridTile(
+            footer: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.name ?? '',
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+                Text("\$${item.price?.toStringAsFixed(2) ?? ''}"),
+              ],
+            ).paddingSymmetric(horizontal: 12, vertical: 8),
+            child: Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
               ),
-              Text("\$${item.price?.toStringAsFixed(2) ?? ''}"),
-            ],
-          ).paddingSymmetric(horizontal: 12, vertical: 8),
-          child: Container(
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: MagicImage(
-              item.images?.firstOrNull ?? '',
-              placeHolderBuilder: (context) => SizedBox(
-                width: double.maxFinite,
-                child: Container(
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding: EdgeInsets.zero,
-                  child: Shimmer.fromColors(
-                    direction: ShimmerDirection.ttb,
-                    baseColor: Colors.grey.shade100,
-                    highlightColor: Colors.grey.shade600,
-                    child: Container(
-                      height: 200,
-                      width: double.maxFinite,
+              child: MagicImage(
+                item.images?.firstOrNull ?? '',
+                placeHolderBuilder: (context) => SizedBox(
+                  width: double.maxFinite,
+                  child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
                       color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    padding: EdgeInsets.zero,
+                    child: Shimmer.fromColors(
+                      direction: ShimmerDirection.ttb,
+                      baseColor: Colors.grey.shade100,
+                      highlightColor: Colors.grey.shade600,
+                      child: Container(
+                        height: 200,
+                        width: double.maxFinite,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
