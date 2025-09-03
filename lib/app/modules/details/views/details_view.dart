@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:magic_extensions/magic_extensions.dart';
 import 'package:magic_image/magic_image.dart';
 
+import '../../cart/controllers/cart_controller.dart';
+import '../../dashboard/controllers/dashboard_controller.dart';
 import '../controllers/details_controller.dart';
 
 class DetailsView extends GetView<DetailsController> {
@@ -106,36 +108,51 @@ class DetailsView extends GetView<DetailsController> {
                       ),
                     ],
                   ),
-                  if (!controller.isAdded)
-                    Expanded(
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(4),
+                  Obx(
+                    () => (!controller.isAdded)
+                        ? Expanded(
+                            child: ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    4,
+                                  ),
+                                ),
+                                backgroundColor: Colors.blue,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                Get.find<CartController>().onAdd(
+                                  controller.product,
+                                );
+                              },
+                              label: Text('Add To Cart'),
+                              icon: Icon(CupertinoIcons.cart),
+                            ),
+                          )
+                        : Expanded(
+                            child: ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(
+                                    4,
+                                  ),
+                                ),
+                                backgroundColor: Colors.blue,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                Get.find<DashboardController>()
+                                        .activeIndex
+                                        .value =
+                                    1;
+                                Get.back();
+                              },
+                              label: Text('Go To Cart'),
+                              icon: Icon(CupertinoIcons.cart),
+                            ),
                           ),
-                          backgroundColor: Colors.blue,
-                          foregroundColor: Colors.white,
-                        ),
-                        onPressed: () {},
-                        label: Text('Add To Cart'),
-                        icon: Icon(CupertinoIcons.cart),
-                      ),
-                    )
-                  else
-                    Expanded(
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(4),
-                          ),
-                          backgroundColor: Colors.blue,
-                          foregroundColor: Colors.white,
-                        ),
-                        onPressed: () {},
-                        label: Text('Go To Cart'),
-                        icon: Icon(CupertinoIcons.cart),
-                      ),
-                    ),
+                  ),
                 ],
               ),
             ),
