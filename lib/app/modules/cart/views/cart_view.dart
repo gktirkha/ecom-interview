@@ -37,6 +37,7 @@ class CartView extends GetView<CartController> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: ExpansionTile(
+                                  key: ValueKey(item),
                                   tilePadding: EdgeInsets.symmetric(
                                     horizontal: 8,
                                   ),

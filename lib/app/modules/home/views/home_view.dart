@@ -27,6 +27,7 @@ class HomeView extends GetView<HomeController> {
             Get.toNamed(Routes.DETAILS, arguments: item);
           },
           child: GridTile(
+            key: ValueKey(item),
             footer: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
